@@ -5,13 +5,13 @@
         <img class="logosul" src="src/imagens/logoSulTurismo.png" />
       </div>
       <div class="infoHeader">
-        <div>
+        <div class="button item1">
           <span>Quem somos</span>
         </div>
-        <div>
+        <div class="button item2">
           <span>Nossos serviços</span>
         </div>
-        <div>
+        <div class="button item3">
           <span>Contato</span>
         </div>
       </div>
@@ -147,28 +147,70 @@ body {
   height: 130px;
   justify-content: space-between;
   padding: 0 10%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 .logosul {
   width: 130px;
 }
-.infoHeader {
-  color: #ffff;
-  justify-content: space-between;
-  margin: 0 10% 0 0;
-  text-transform: uppercase;
+.infoHeader{
   display: flex;
-  font-family: "Arimo";
-  font-style: normal;
-  font-weight: bold;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 12px;
+  font-family: 'Arimo';
   font-size: 22px;
-  line-height: 25px;
-  margin: 0% 0 0 0;
-  padding: 0;
-  text-align: center;
+  line-height: 28px;
+  font-weight: 300;
+  align-items: center;
+  color: #F6F6F6;
+  text-decoration: none;
+  
+  overflow: hidden;
+  cursor: pointer;  
+  z-index: 1;
+  height: 100%;
 }
-.infoHeader :hover {
-  color: #fa943a;
+.infoHeader span {
+  padding: 24px;
 }
+.button::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: linear-gradient(to right, #FDA65C , #D76300);
+  transition: all 0.8s;
+  z-index: -1;
+}
+.item1::before{
+  width: 0;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+}
+.item1:hover::before{
+  width: 35%;
+}
+.item2::before{
+  width: 0;
+  height: 100%;
+  top: 0%;
+  left: 35%;
+}
+.item2:hover::before{
+  width: 40%;
+}
+.item3::before{
+  width: 0;
+  height: 100%;
+  top: 0%;
+  left: 75%;
+}
+.item3:hover::before{
+  width: 45%;
+}
+
 .infoHeader span {
   padding: 15px;
 }
@@ -313,7 +355,7 @@ hr {
   font-family: "Arimo";
   font-style: normal;
   font-weight: 700;
-  font-size: 45px;
+  font-size: px;
   line-height: 60px;
   text-align: right;
   color: #000000;
